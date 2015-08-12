@@ -1,0 +1,25 @@
+{
+    "name": "geoip-db",
+    "description": "GeoIP Database and Cache for Node.js",
+    "version": "0.0.1",
+    "author": "P. Liess <smrchy+npm@gmail.com>",
+    "engines": {
+		"node": "> 0.12.0"
+	},
+	"dependencies": {
+		"node-cache": "*",
+		"express": "4.x",
+		"morgan": "*",
+		"request": "*"
+	},
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-contrib-watch": "*",
+		"grunt-contrib-coffee": "*",
+		"grunt-notify": "*"
+	},
+	"repository": {
+	    "type": "git",
+	    "url": "http://github.com/smrchy/geoip-db"
+	  }
+}
