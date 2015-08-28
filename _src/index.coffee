@@ -3,6 +3,7 @@ PORT 		= process.env.GEOIP_PORT or 8123
 TTL 		= process.env.GEOIP_TTL or 345600
 
 dgram = require "dgram"
+_ = require "lodash"
 request = require "request"
 nodecache = require "node-cache"
 nc = new nodecache({stdTTL: TTL, checkperiod: 10000})
@@ -22,7 +23,7 @@ app.get '/ip/:ip', ( req, res ) ->
 		if err
 			res.status(400).send(err)
 			return
-		res.type("application/json").send(resp)
+		res.type("json").send(resp)
 		return
 	return
 
@@ -35,7 +36,7 @@ _getip = (ip, cb) ->
 	if geoip isnt undefined
 		cb(null, geoip)
 		return
-	request "http://ip-api.com/json/#{ip}", (err, resp) ->
+	request "http://ip-api.com/json/#{ip}?fields=country,regionName,city,lat,lon", (err, resp) ->
 		if err
 			cb(err)
 			return

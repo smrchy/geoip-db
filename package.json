@@ -6,11 +6,15 @@
     "engines": {
 		"node": "> 0.12.0"
 	},
+	"scripts": {
+	  "start": "node index.js"
+	},
 	"dependencies": {
 		"node-cache": "*",
 		"express": "4.x",
 		"morgan": "*",
-		"request": "*"
+		"request": "*",
+		"lodash": "*"
 	},
 	"devDependencies": {
 		"grunt": "*",
